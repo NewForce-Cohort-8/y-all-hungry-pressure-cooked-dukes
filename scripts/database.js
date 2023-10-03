@@ -15,11 +15,11 @@ const database = {
     ],
     
     drinks: [
-        {id: 1, name: "shirley temple", image:"https:www.simplejoy.com/wp-content/uploads/2022/01/shirley-temple-683x1024.webp", price: 7.99},
-        {id: 2, name: "giggly juice", image: "insert url", price: 7.99},
-        {id: 3, name: "water", image: "insert url", price: 17.99},
-        {id: 4, name: "pepsi cola", image: "insert url", price: 7.99},
-        {id: 5, name: "koolaid", image: "insert url", price: 3.99},
+        {id: 1, name: "shirley temple", image:"https:www.simplejoy.com/wp-content/uploads/2022/01/shirley-temple-683x1024.webp", price: 10.99},
+        {id: 2, name: "giggly juice", image: "https://images.ctfassets.net/7t85a6f8wt2m/5Rw1p8zSZvbbcCffjlhWQu/35be33b6a85a50e4cd3e60dedb69d3c4/Giggle_Juice_image?fm=webp&q=75&w=800&h=600&fit=fill", price: 7.99},
+        {id: 3, name: "water", image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/07/14/15/running-water.jpg?width=1200&height=1200&fit=crop", price: 17.99},
+        {id: 4, name: "lil pepsi", image: "https://www.thelittledollhousecompany.com/bmz_cache/5/5e08f9e386b71605c02f4fcc37ca8211.image.733x550.jpg", price: 11.99},
+        {id: 5, name: "koolaid", image: "https://images.freshop.com/00043000956045/a7f8d3dce7eb8363fe6dded4c2fe4fb1_large.png", price: 1.99},
         ],
 
     desserts: [
@@ -50,8 +50,22 @@ export const setLocation = (locationId) => {
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
+
 export const getLocations = () => {
     return database.getLocations.map(f => ({...f}))
+}
+
+export const getDrinks = () => {
+    return database.drinks.map(drink => ({ ...drink }))
+}
+
+export const getDrinkLocations = () => {
+    return database.drinkLocations.map(drinkLocation => ({...drinkLocation}))
+}
+
+export const setDrink = (id) => {
+    database.transientState.drinksId = id
+    document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
 export const completeOrder = () => {
