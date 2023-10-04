@@ -1,5 +1,7 @@
 //this module contains all the data (state) for Yall Hungry
 
+//this module contains all the data (state) for Yall Hungry
+
 const database = {
     
     locations: [
@@ -18,16 +20,21 @@ const database = {
     ],
 
     foods: [
-        { id: 1, name: "Hamburger", image: "insert url here", description: "two all beef patties, special sauce", price: 29.99 },
+        {id:1, name: "Hamburger", image: "/images/foods/hamburger.jpg", description: "two all beef patties, special sauce, lettuce, cheese, pickles and onions on a sesame seed bun", price: 29.99},
+        {id:2, name: "Hot Dog", image: "/images/foods/hotdog.jpg", description: "A tube of meat in a bun", price: 15.99},
+        {id:3, name: "Mothman Meatballs", image: "/images/foods/Meatballs.jpg", description: "Do not ask where the meat comes from", price: 79.99},
+        {id:4, name: "Veggie Platter", image: "/images/foods/veggies.jpg", description: "A bunch of plants on a plate", price: 19.99},
+        {id:5, name: "Pizza", image: "/images/foods/pizza.jpg", description: "New York style only", price: 5.99},
     ],
 
+
     drinks: [
-        {id: 1, name: "shirley temple", image:"https:www.simplejoy.com/wp-content/uploads/2022/01/shirley-temple-683x1024.webp", price: 10.99},
-        {id: 2, name: "giggly juice", image: "https://images.ctfassets.net/7t85a6f8wt2m/5Rw1p8zSZvbbcCffjlhWQu/35be33b6a85a50e4cd3e60dedb69d3c4/Giggle_Juice_image?fm=webp&q=75&w=800&h=600&fit=fill", price: 7.99},
-        {id: 3, name: "water", image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/07/14/15/running-water.jpg?width=1200&height=1200&fit=crop", price: 17.99},
-        {id: 4, name: "lil pepsi", image: "https://www.thelittledollhousecompany.com/bmz_cache/5/5e08f9e386b71605c02f4fcc37ca8211.image.733x550.jpg", price: 11.99},
-        {id: 5, name: "koolaid", image: "https://images.freshop.com/00043000956045/a7f8d3dce7eb8363fe6dded4c2fe4fb1_large.png", price: 1.99},
-        ],
+        { id: 1, name: "shirley temple", image: "https:www.simplejoy.com/wp-content/uploads/2022/01/shirley-temple-683x1024.webp", price: 7.99 },
+        { id: 2, name: "giggly juice", image: "insert url", price: 7.99 },
+        { id: 3, name: "water", image: "insert url", price: 17.99 },
+        { id: 4, name: "pepsi cola", image: "insert url", price: 7.99 },
+        { id: 5, name: "koolaid", image: "insert url", price: 3.99 },
+    ],
 
     desserts: [
         { id: 1, name: "Baklava", image: "link", description: "description here", price: 6.20 },
@@ -54,6 +61,14 @@ const database = {
 export const getDrinks = () => {
     return database.drinks.map(name => ({ ...name }))
 }
+//this is the export function for toys array-KR
+export const getHappyToys = () => {
+    return database.happyToys.map(name => ({ ...name }))
+}
+
+export const getFoods = () => {
+    return database.foods.map(food => ({...food}))
+}
 
 
 //Brodcasts the custom event to entire document so the application can re-render and update state-KR
@@ -61,8 +76,15 @@ export const setDrinks = (id) => {
     database.transientState.drinksId = id
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
+export const sethappyToys = (id) => {
+    database.transientState.happyToysId = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 
-
+export const setFoods = (id) => {
+    database.transientState.foodsId = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 
 
 
