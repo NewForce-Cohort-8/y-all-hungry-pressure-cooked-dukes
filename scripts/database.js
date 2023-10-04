@@ -37,11 +37,11 @@ const database = {
     ],
 
     desserts: [
-        { id: 1, name: "Baklava", image: "link", description: "description here", price: 6.20 },
-        { id: 2, name: "Brownie", image: "link", description: "description here", price: 4.55 },
-        { id: 3, name: "Cannoli", image: "link", description: "description here", price: 5.29 },
-        { id: 4, name: "Gulab Jamun", image: "link", description: "description here", price: 3.99 },
-        { id: 5, name: "Medovik", image: "link", description: "description here", price: 9.99 }
+        {id: 1, name: "Baklava", image: "images/Baklaka-S1.jpg", description: "Baklava is a sweet dessert pastry made of layers of filo filled with chopped nuts and sweetened and held together with syrup or honey", price: 6.20}, 
+        {id: 2, name: "Brownie", image: "images/fudgy-homemade-brownies.jpg", description: "Chocolate brownie/cake/fudgy is a chocolate baked confection", price: 4.55},
+        {id: 3, name: "Cannoli", image: "images/Cannoli.jpg", description: "Tube-shaped Italian dessert that consists of fried pastry dough stuffed with a sweet, creamy cheese filling", price: 5.29 }, 
+        {id: 4, name: "Gulab Jamun", image: "images/gulab-jamun.jpg", description: "Indian dessert of fried dough balls that are soaked in a sweet, sticky sugar syrup", price: 3.99 }, 
+        {id: 5, name: "Medovik", image: "images/medovik-with-bees.jpg", description: "Delicious honey cake", price: 9.99 }
     ],
 
 
@@ -61,7 +61,6 @@ const database = {
 export const getDrinks = () => {
     return database.drinks.map(name => ({ ...name }))
 }
-//this is the export function for toys array-KR
 export const getHappyToys = () => {
     return database.happyToys.map(name => ({ ...name }))
 }
@@ -83,6 +82,15 @@ export const sethappyToys = (id) => {
 
 export const setFoods = (id) => {
     database.transientState.foodsId = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const getDesserts = () => {
+    return database.desserts.map(dessert => ({...dessert}))
+}
+
+export const setDesserts = (id) => {
+    database.transientState.selectedDessert = id
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
