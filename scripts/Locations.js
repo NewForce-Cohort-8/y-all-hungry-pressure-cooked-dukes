@@ -1,4 +1,4 @@
-import { getLocation } from "./database.js";
+import { getLocation , setLocation } from "./database.js";
 
 const locations = getLocation()
 
@@ -6,7 +6,7 @@ document.addEventListener(
     "change",
     (changeEvent) => {
         if (changeEvent.target.id === "location") {
-            setPoints(parseInt(changeEvent.target.value))
+            setLocation(parseInt(changeEvent.target.value))
         }
     }
 )
