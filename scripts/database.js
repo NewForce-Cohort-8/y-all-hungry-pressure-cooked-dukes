@@ -1,5 +1,7 @@
 //this module contains all the data (state) for Yall Hungry
 
+//this module contains all the data (state) for Yall Hungry
+
 const database = {
     
     locations: [
@@ -55,6 +57,10 @@ const database = {
 }
 
 
+
+export const getDrinks = () => {
+    return database.drinks.map(name => ({ ...name }))
+}
 //this is the export function for toys array-KR
 export const getHappyToys = () => {
     return database.happyToys.map(name => ({ ...name }))
@@ -65,8 +71,11 @@ export const getFoods = () => {
 }
 
 
-
 //Brodcasts the custom event to entire document so the application can re-render and update state-KR
+export const setDrinks = (id) => {
+    database.transientState.drinksId = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 export const sethappyToys = (id) => {
     database.transientState.happyToysId = id
     document.dispatchEvent(new CustomEvent("stateChanged"))
@@ -76,9 +85,6 @@ export const setFoods = (id) => {
     database.transientState.foodsId = id
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
-
-
-
 
 
 
