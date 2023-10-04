@@ -1,5 +1,7 @@
 //this module contains all the data (state) for Yall Hungry
 
+//this module contains all the data (state) for Yall Hungry
+
 const database = {
     
     locations: [
@@ -35,11 +37,11 @@ const database = {
     ],
 
     desserts: [
-        { id: 1, name: "Baklava", image: "link", description: "description here", price: 6.20 },
-        { id: 2, name: "Brownie", image: "link", description: "description here", price: 4.55 },
-        { id: 3, name: "Cannoli", image: "link", description: "description here", price: 5.29 },
-        { id: 4, name: "Gulab Jamun", image: "link", description: "description here", price: 3.99 },
-        { id: 5, name: "Medovik", image: "link", description: "description here", price: 9.99 }
+        {id: 1, name: "Baklava", image: "images/Baklaka-S1.jpg", description: "Baklava is a sweet dessert pastry made of layers of filo filled with chopped nuts and sweetened and held together with syrup or honey", price: 6.20}, 
+        {id: 2, name: "Brownie", image: "images/fudgy-homemade-brownies.jpg", description: "Chocolate brownie/cake/fudgy is a chocolate baked confection", price: 4.55},
+        {id: 3, name: "Cannoli", image: "images/Cannoli.jpg", description: "Tube-shaped Italian dessert that consists of fried pastry dough stuffed with a sweet, creamy cheese filling", price: 5.29 }, 
+        {id: 4, name: "Gulab Jamun", image: "images/gulab-jamun.jpg", description: "Indian dessert of fried dough balls that are soaked in a sweet, sticky sugar syrup", price: 3.99 }, 
+        {id: 5, name: "Medovik", image: "images/medovik-with-bees.jpg", description: "Delicious honey cake", price: 9.99 }
     ],
 
 
@@ -55,7 +57,10 @@ const database = {
 }
 
 
-//this is the export function for toys array-KR
+
+export const getDrinks = () => {
+    return database.drinks.map(name => ({ ...name }))
+}
 export const getHappyToys = () => {
     return database.happyToys.map(name => ({ ...name }))
 }
@@ -74,6 +79,10 @@ export const setLocation = (id) => {
 }
 
 //Brodcasts the custom event to entire document so the application can re-render and update state-KR
+export const setDrinks = (id) => {
+    database.transientState.drinksId = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 export const sethappyToys = (id) => {
     database.transientState.happyToysId = id
     document.dispatchEvent(new CustomEvent("stateChanged"))
@@ -84,8 +93,14 @@ export const setFoods = (id) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
+export const getDesserts = () => {
+    return database.desserts.map(dessert => ({...dessert}))
+}
 
-
+export const setDesserts = (id) => {
+    database.transientState.selectedDessert = id
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 
 
 
