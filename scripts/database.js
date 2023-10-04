@@ -64,7 +64,14 @@ export const getFoods = () => {
     return database.foods.map(food => ({...food}))
 }
 
+export const getLocation = () => {
+    return database.locations.map(name => ({...name}))
+}
 
+export const setLocation = (locationID) => {
+database.transientState.selectedLocation = locationID
+document.dispatchEvent( new CustomEvent("stateChanged"))
+}
 
 //Brodcasts the custom event to entire document so the application can re-render and update state-KR
 export const sethappyToys = (id) => {
