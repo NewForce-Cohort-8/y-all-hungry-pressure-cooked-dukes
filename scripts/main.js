@@ -1,6 +1,5 @@
 import { YallHungry } from "./YallHungry.js"
 
-
 const mainContainer = document.querySelector("#container")
 
 const renderAllHTML = () => {
