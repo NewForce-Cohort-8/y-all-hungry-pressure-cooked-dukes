@@ -7,21 +7,23 @@ document.addEventListener(
     "change",
     (changeEvent) => {
         if (changeEvent.target.id === "foods") {
-            setFoods(parseInt(changeEvent.target.value))
+            const chosenOption = changeEvent.target.value
+            console.log(chosenOption)
         }
     }
 )
 
 export const Foods = () => {
-    let html = "<h2>Foods</h2>";
-
-    html += '<select id="foods">';
-    html += '<option value="0">Select a food</option>';
-
-    for (const food of foods) {
-        html += `<option value="${food.id}">${food.name}</option>`
+    let html = "<h2>Foods</h2>"
+    
+    html += '<select id="foods">'
+    html += '<option value="0">Select a Food</option>'
+    const arrayOfOptions = foods.map( (food) => {
+        return `<option value="${food.id}">${food.name}</option>`
     }
+)
 
-    html += "</select>";
-    return html
+html += arrayOfOptions.join("")
+html += "</select>"
+return html
 }

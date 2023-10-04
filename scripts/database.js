@@ -61,7 +61,7 @@ export const getHappyToys = () => {
 }
 
 export const getFoods = () => {
-    return database.foods
+    return database.foods.map(food => ({...food}))
 }
 
 
