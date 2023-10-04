@@ -1,4 +1,5 @@
 import { getHappyToysHTML } from "./happyToys.js"
+import { Foods } from "./Foods.js"
 
 
 
@@ -12,7 +13,7 @@ import { getHappyToysHTML } from "./happyToys.js"
 
 export const YallHungry = () => {
     return `
-        
+${Foods()}
 ${getHappyToysHTML()}
 `
 }
