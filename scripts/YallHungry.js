@@ -1,6 +1,6 @@
 import {getDrinksHTML} from "./drinks.js"
 
-export const yallHungry = () => {
+export const YallHungry = () => {
 
     return `
 ${getDrinksHTML()}

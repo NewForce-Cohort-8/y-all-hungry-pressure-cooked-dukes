@@ -1,14 +1,19 @@
-import {yallHungry} from "./YallHungry.js";
+import { YallHungry } from "./YallHungry.js"
 
-const mainContainer = document.querySelector(#container);
+const mainContainer = document.querySelector("#container");
 
-const renderALLHTML = () => {
-    mainContainer.innerHTML = yallHungry();
-
+const renderAllHTML = () => {
+    mainContainer.innerHTML = YallHungry();
 };
 
-renderALLHTML();
+renderAllHTML();
 
 document.addEventListener("stateChanged", function() {
-renderALLHTML();
+    renderAllHTML(); 
+
+  
+
+    
 });
+
+
