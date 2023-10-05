@@ -1,4 +1,4 @@
-import { getLocation , setLocation } from "./database.js";
+import { getLocation } from "./database.js";
 
 const locations = getLocation()
 
@@ -6,7 +6,8 @@ document.addEventListener(
     "change",
     (changeEvent) => {
         if (changeEvent.target.id === "location") {
-            setLocation(parseInt(changeEvent.target.value))
+            const chosenOption = changeEvent.target.value
+            console.log(chosenOption)
         }
     }
 )
