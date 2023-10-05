@@ -1,0 +1,26 @@
+
+
+
+
+#mainHeader {
+    border: 2px solid red
+}
+
+#locationSelect {
+    border: 2px solid green
+}
+
+#orderBox {
+    border: 2px solid orangered;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#orderSelections {
+    border: 2px solid purple
+}
+
+#orderDisplay {
+    border: 2px solid yellow
+}
