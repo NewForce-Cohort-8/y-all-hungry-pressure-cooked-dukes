@@ -1,4 +1,4 @@
-import { getDesserts, setDesserts } from "./database.js";
+import { getDesserts } from "./database.js";
 
 const desserts = getDesserts()
 
@@ -6,7 +6,8 @@ document.addEventListener(
     "change",
     (changeEvent) => {
         if (changeEvent.target.id === "desserts") {
-            setDesserts(parseInt(changeEvent.target.value))
+            const chosenOption = changeEvent.target.value
+            console.log(chosenOption)
         }
     }
 )

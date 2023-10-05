@@ -44,6 +44,19 @@ const database = {
         {id: 5, name: "Medovik", image: "images/medovik-with-bees.jpg", description: "Delicious honey cake", price: 9.99 }
     ],
 
+    dessertLocation: [
+        {id: 1, dessertsId: 1, locationsId: 1, inventory: 30},
+        {id: 2, dessertsId: 3, locationsId: 1, inventory: 35},
+        {id: 3, dessertsId: 2, locationsId: 1, inventory: 0},
+        {id: 4, dessertsId: 4, locationsId: 1, inventory: 50},
+        {id: 5, dessertsId: 5, locationsId: 1, inventory: 32},
+        {id: 6, dessertsId: 2, locationsId: 2, inventory: 10},
+        {id: 7, dessertsId: 4, locationsId: 2, inventory: 20},
+        {id: 8, dessertsId: 1, locationsId: 2, inventory: 8},
+        {id: 9, dessertsId: 3, locationsId: 2, inventory: 29},
+        {id: 10, dessertsId: 5, locationsId: 2, inventory: 0},
+    ],
+
 
     orders: [
         { id: 1, locationsId: 1, foodsId: 1, drinksId: 1, dessertsId: 1, happyToysId: 1, timestamp: 1614659931693 },

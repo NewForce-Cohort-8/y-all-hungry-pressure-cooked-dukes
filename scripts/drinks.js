@@ -8,12 +8,11 @@ document.addEventListener(
   "change",
   (changeEvent) => {
       if (changeEvent.target.id === "drinks") {
-            constchosenOption = changeEvent.target.value
+            const chosenOption = changeEvent.target.value
             console.log(chosenOption) 
       }
-        
       }
-)
+    )
 
 
 
@@ -21,7 +20,7 @@ export const getDrinksHTML = () => {
 
   let html = "<h2> Beverages</h2>"
 
-  html += `<select id = "Drinks">`
+  html += `<select id = "drinks">`
   html += `<option value="0">Select a Beverage!</option>`
 
   const arrayOfOptions = drinks.map((drinks) => {
