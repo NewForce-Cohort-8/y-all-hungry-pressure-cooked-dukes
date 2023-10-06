@@ -49,7 +49,7 @@ const database = {
         {id: 2, dessertsId: 3, locationsId: 1, inventory: 35},
         {id: 3, dessertsId: 2, locationsId: 1, inventory: 0},
         {id: 4, dessertsId: 4, locationsId: 1, inventory: 50},
-        {id: 5, dessertsId: 5, locationsId: 1, inventory: 32},
+        {id: 5, dessertsId: 5, locationsId: 1, inventory: 31},
         {id: 6, dessertsId: 2, locationsId: 2, inventory: 10},
         {id: 7, dessertsId: 4, locationsId: 2, inventory: 20},
         {id: 8, dessertsId: 1, locationsId: 2, inventory: 8},
@@ -68,8 +68,6 @@ const database = {
 
     ],
 }
-
-
 
 export const getDrinks = () => {
     return database.drinks.map(name => ({ ...name }))
@@ -115,5 +113,23 @@ export const setDesserts = (id) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
+export const getDessertLocation = () => {
+    return database.dessertLocation.map(dessertLoc => ({...dessertLoc}))
+}
 
+export const Orders = () => {
+
+    const newOrder = {...database.orders}
+
+    const lastIndex = database.orders.length - 1
+    newOrder.id = database.orders[lastIndex].id + 1
+
+    newOrder.timestamp = Date.now()
+
+    database.orders.push(newOrder)
+
+    database.orders = {}
+
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 

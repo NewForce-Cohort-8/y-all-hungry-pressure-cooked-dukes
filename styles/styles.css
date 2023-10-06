@@ -1,13 +1,21 @@
-
+@import url("fonts/FatheyaFood.ttf");
+@font-face {
+    font-family: "Fatheya Food";
+    src: url(/fonts/FatheyaFood.ttf);
+}
 
 
 
 #mainHeader {
-    border: 2px solid red
+    border: 2px solid red;
+    font-family: "Fatheya Food";
+    font-size: 70px;
 }
 
 #locationSelect {
-    border: 2px solid green
+    border: 2px solid green;
+    font-family: "Fatheya Food";
+    font-size: 30px;
 }
 
 #orderBox {
@@ -18,9 +26,28 @@
 }
 
 #orderSelections {
-    border: 2px solid purple
+    border: 2px solid purple;
+    font-family: "Fatheya Food";
+    font-size: 30px;
 }
 
 #orderDisplay {
-    border: 2px solid yellow
+    border: 2px solid yellow;
+    font-family: "Fatheya Food";
+    font-size: 20px;
+}
+
+#orderButton {
+    font-family: "Fatheya Food";
+    font-size: 40px;
+}
+
+h2 {
+    font-family: "Fatheya Food";
+    font-size: 40px;
+}
+
+#foods, #drinks, #desserts, #toys, #location {
+    font-family: "Fatheya Food"; 
+    font-size: 30px;
 }
