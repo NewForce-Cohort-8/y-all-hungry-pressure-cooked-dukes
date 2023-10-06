@@ -1,5 +1,6 @@
-import { getDesserts } from "./database.js";
+import { getDesserts, getDessertLocation } from "./database.js";
 
+const dessertLoc = getDessertLocation()
 const desserts = getDesserts()
 
 document.addEventListener(
@@ -11,6 +12,32 @@ document.addEventListener(
         }
     }
 )
+
+const dessertInStock = () => {
+    const dessertStock = []
+    const stock = dessertLoc.map( (dessertLoc) => {
+        if (dessertLoc.inventory > 0) {
+            dessertStock.push(dessertLoc.id)
+        }
+    })
+    console.log(dessertStock)
+    return dessertStock
+}
+
+dessertInStock() 
+
+const dessertOutOfStock = () => {
+    const dessertOutOfStock = []
+    const stock = dessertLoc.map( (dessertLoc) => {
+        if (dessertLoc.inventory === 0) {
+            dessertOutOfStock.push(dessertLoc.id)
+        }
+    })
+    console.log(dessertOutOfStock)
+    return dessertOutOfStock
+}
+
+dessertOutOfStock()
 
 export const Desserts = () => {
     let html = "<h2>Desserts</h2>"
