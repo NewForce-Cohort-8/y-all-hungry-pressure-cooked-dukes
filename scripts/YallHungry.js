@@ -24,15 +24,13 @@ export const YallHungry = () => {
         ${getDrinksHTML()}
         ${Desserts()}
     </div>
-    <div id="orderDisplay"><h1>ORDERS GO HERE</h1>
+    <div id="orderDisplay"><p>Current Order:</P>
+    </div>
+    <div id="information"><p>Food Truck Image</p><p>Phone number superimposed</p>
     </div>
 </section>
-<button id="orderButton">Create Custom Order</button> 
-            </article>
-            <article class="customOrders">
-          <h2>Custom Orders</h2>
-              ${Orders()} 
-              </article>
+
+<div id="footer"><p>Clever Marketing Slogan</p>
 `
 }
 
