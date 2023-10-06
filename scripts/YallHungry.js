@@ -14,9 +14,13 @@ export const YallHungry = () => {
         ${getDrinksHTML()}
         ${Desserts()}
     </div>
-    <div id="orderDisplay"><p>ORDERS GO HERE</P>
+    <div id="orderDisplay"><p>Current Order:</P>
+    </div>
+    <div id="information"><p>Food Truck Image</p><p>Phone number superimposed</p>
     </div>
 </section>
+
+<div id="footer"><p>Clever Marketing Slogan</p>
 `
 }
 

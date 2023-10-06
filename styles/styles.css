@@ -1,26 +1,98 @@
 
-
+body {
+    background-color: gainsboro;
+}
 
 
 #mainHeader {
-    border: 2px solid red
+    border: 6px solid darkblue;
+    border-block-style: solid;
+    position: sticky;
+    background-color: linen;
+    line-height: 100px;
+    color: darkblue;
+    font-size: 70px;
+    text-align: center;
+    font-family: georgia, serif;
+    padding: 10px
+
 }
 
 #locationSelect {
-    border: 2px solid green
+    border: 4px solid darkblue;
+    border-block-style: solid;
+    background-color: linen;
+    font-size: 25px;
+    color: darkblue;
+    text-align: center;
+    font-family: georgia, serif;
+    padding: 10px
 }
 
 #orderBox {
-    border: 2px solid orangered;
+    border: 4px solid darkblue;
     display: flex;
     justify-content: space-around;
+    color: darkblue;
+    border-block-style: solid;
+    font-family: georgia, serif;
+    padding-top: 25px;
+    padding-bottom: 25px; 
     
 }
 
 #orderSelections {
-    border: 2px solid purple
+    border: 2px solid darkblue;
+    background-color: lightgrey;
+    color: darkblue
+    border-block-style: solid;
+    font-family: georgia, serif; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 15px
+    
 }
 
 #orderDisplay {
-    border: 2px solid yellow
+    border: 2px solid darkblue;
+    color: darkblue;
+    background-color: lightgrey;
+    font-size: 25px;
+    border-block-style: solid;
+    font-family: Georgia, serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px
+    
 }
+
+#information {
+    border: 2px solid darkblue;
+    color: darkblue;
+    background-color: lightgrey;
+    font-size: 10px;
+    font-family: Georgia, serif;
+    ;
+    padding: 20px;
+    font-size: 25px;
+
+}
+
+#footer {
+        border: 4px solid darkblue;
+        background-color: linen;
+        border-block-style: solid;
+        position: sticky;
+        line-height: 45px;
+        color: darkblue;
+        font-size: 35px;
+        text-align: center;
+        font-family: georgia, serif;
+        padding: 5px
+
+
+}
+
